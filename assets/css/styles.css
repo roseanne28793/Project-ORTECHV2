@@ -1,0 +1,20 @@
+.card .card-transparent{
+    /* background: linear-gradient(60deg, #ffffff, #ffffff) !important; */
+    background: linear-gradient(60deg, #3e3636, #3e3636) !important;
+}
+.col-md-12 .card-margin{
+    /* position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; */
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.nav-tabs .nav-item .nav-link.active{
+    background-color: #ed4d4a !important;
+}
+
+#date{
+    float: right;
+}
