@@ -7,84 +7,60 @@
   <link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/img/favicon.png">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/styles.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/materialize.min.css">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/mdtimepicker.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <title>
     Encode
   </title>
-  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <!-- Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'/>
+  <!-- Fonts and icons -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="<?php echo base_url() ?>assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet"/>
 </head>
 
 <body>
-  <div class="wrapper ">
+  <div class="wrapper">
     <div class="sidebar" data-color="danger" data-background-color="white" data-image="<?php echo base_url() ?>assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
-        </a></div>
+      -->
+      <div class="logo">
+        <a class="simple-text logo-mini">
+          St. Dominic
+        </a>
+        <a class="simple-text logo-normal">
+          Medical Center
+        </a>
+      </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item  ">
-            <a class="nav-link" href="./dashboard.html">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Nurse/dashboard') ?>">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item active ">
-            <a class="nav-link" href="./user.html">
+            <a class="nav-link" href="<?php echo site_url('Nurse/encode') ?>">
               <i class="material-icons">person</i>
               <p>Patient's Info</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Nurse/ortech') ?>">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
-              <p>RTL Support</p>
+              <p>OR tech</p>
             </a>
           </li>
         </ul>
       </div>
     </div>
     <div class="main-panel">
-      <!-- Navbar -->
+    <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
@@ -97,6 +73,9 @@
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
+            <a>
+              Juan Dela Cruz
+            </a>
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -116,16 +95,15 @@
           </div>
         </div>
       </nav>
-      <!-- End Navbar -->
+    <!-- End Navbar -->
       <div class="content">
-        <!-- <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-        </div> -->
         <div class="container-fluid">
           <div class="row">
               <div class="col-md-12 card-margin">
                   <div class="card">
+                    <form autocomplete="off" method="post" action="<?php echo site_url("Nurse/addpatient") ?>">
                     <div class="card-header card-header-tabs card-header-danger card-transparent">
+                    <!-- <form> -->
                     <div class="nav-tabs-navigation">
                         <div class="nav-tabs-wrapper">
                         <ul class="nav nav-tabs" data-tabs="tabs">
@@ -183,18 +161,18 @@
                                                   <!-- <p class="card-category">Complete profile</p> -->
                                                   </div>
                                                   <div class="card-body">
-                                                    <form>
+                                                    <!-- <form> -->
                                                         <div class="row">
                                                           <div class="col-md-3">
                                                               <div class="form-group">
                                                                 <label class="bmd-label-floating">Case No.:</label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control" name="case_no">
                                                               </div>
                                                           </div>
                                                           <div class="col-md-3">
                                                               <div class="form-group">
                                                                 <label class="bmd-label-floating">Room No.:</label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control" name="room_no">
                                                               </div>
                                                           </div>
                                                         </div>
@@ -202,7 +180,7 @@
                                                           <div class="col-md-3">
                                                               <div class="form-group">
                                                                 <label class="bmd-label-floating">Date:</label>
-                                                                <input type="text" class="form-control" id="datepicker">
+                                                                <input type="text" class="form-control" id="datepicker" name="case_date">
                                                               </div>
                                                           </div>
                                                         </div>
@@ -210,28 +188,28 @@
                                                           <div class="col-md-4">
                                                               <div class="form-group">
                                                                 <label class="bmd-label-floating">First Name:</label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control" name="fname">
                                                               </div>
                                                           </div>
                                                           <div class="col-md-3">
                                                               <div class="form-group">
                                                                 <label class="bmd-label-floating">Middle Name:</label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control" name="mname">
                                                               </div>
                                                           </div>
                                                           <div class="col-md-3">
                                                               <div class="form-group">
                                                                 <label class="bmd-label-floating">Last Name:</label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control" name="lname">
                                                               </div>
                                                           </div>
                                                           <div class="col-md-2">
                                                             <div class="form-group">
-                                                              <select class="form-control">
-                                                                <option value="" disabled selected>Suffix:</option>
-                                                                <option value="1">Option 1</option>
-                                                                <option value="2">Option 2</option>
-                                                                <option value="3">Option 3</option>
+                                                              <select name="suffix_name" id="" class="form-control">
+                                                                  <option value="" disabled selected>Suffix:</option>
+                                                                  <?php foreach($suffix as $row): ?>
+                                                                      <option value="<?php echo $row->id; ?>"><?php echo $row->suffix_name; ?></option>
+                                                                  <?php endforeach; ?>
                                                               </select>
                                                             </div>
                                                           </div>
@@ -239,69 +217,75 @@
                                                         <div class="row">
                                                           <div class="col-md-3">
                                                               <div class="form-group">
-                                                                <label class="bmd-label-floating">Birthday:</label>
-                                                                <input type="text" class="form-control">
+                                                                <label class="">Birthday:</label>
+                                                                <input type="date" class="form-control" id="txtbirthdate" name="textbirthdate" onkeyup="getAgeVal(0)" onblur="getAgeVal(0)" maxlength="10">
                                                               </div>
                                                           </div>
                                                           <div class="col-md-3">
                                                               <div class="form-group">
-                                                                <label class="bmd-label-floating">Age:</label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control" name="lblage" id="txtage" placeholder="Age:">
                                                               </div>
                                                           </div>
                                                           <div class="col-md-3">
                                                               <div class="form-group">
-                                                                <label class="bmd-label-floating">Sex:</label>
-                                                                <input type="text" class="form-control">
+                                                                <select class="form-control" name="sex">
+                                                                  <option value="" disabled selected>Sex:</option>
+                                                                  <option value="Male">Male</option>
+                                                                  <option value="Female">Female</option>
+                                                                </select>
                                                               </div>
                                                           </div>
                                                           <div class="col-md-3">
                                                               <div class="form-group">
-                                                                <select class="form-control">
-                                                                  <option value="" disabled selected>Status:</option>
-                                                                  <option value="1">Option 1</option>
-                                                                  <option value="2">Option 2</option>
-                                                                  <option value="3">Option 3</option>
+                                                                <select name="status" id="" class="form-control">
+                                                                    <option value="" disabled selected>Status:</option>
+                                                                    <?php foreach($status as $row): ?>
+                                                                        <option value="<?php echo $row->id; ?>"><?php echo $row->status_name; ?></option>
+                                                                    <?php endforeach; ?>
                                                                 </select>
                                                               </div>
                                                           </div>
                                                         </div>
                                                         <div class="row">
-                                                          <div class="col-md-12">
+                                                          <div class="col-md-3">
+                                                              <div class="form-group">
+                                                                <select name="membership" id="" class="form-control">
+                                                                    <option value="" disabled selected>Membership:</option>
+                                                                    <?php foreach($membership as $row): ?>
+                                                                        <option value="<?php echo $row->id; ?>"><?php echo $row->membership_name; ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-md-9">
                                                               <div class="form-group">
                                                                   <label class="bmd-label-floating">Address:</label>
-                                                                  <input type="text" class="form-control">
+                                                                  <input type="text" class="form-control" name="address">
                                                               </div>
                                                           </div>
                                                         </div>
                                                         <div class="row">
                                                           <div class="col-md-4">
                                                               <div class="form-group">
-                                                                <select class="form-control">
-                                                                  <option value="" disabled selected>Province:</option>
-                                                                  <option value="1">Option 1</option>
-                                                                  <option value="2">Option 2</option>
-                                                                  <option value="3">Option 3</option>
+                                                                <select class="form-control" name="province" id="province">
+                                                                    <option value="" disabled selected>Province:</option>
+                                                                      <?php foreach($refprovince as $row): ?>
+                                                                          <option value="<?php echo $row->provCode; ?>"><?php echo $row->provDesc; ?></option>
+                                                                      <?php endforeach; ?>
                                                                 </select>
                                                               </div>
                                                           </div>
                                                           <div class="col-md-4">
                                                               <div class="form-group">
-                                                                <select class="form-control">
-                                                                  <option value="" disabled selected>City:</option>
-                                                                  <option value="1">Option 1</option>
-                                                                  <option value="2">Option 2</option>
-                                                                  <option value="3">Option 3</option>
+                                                                <select class="form-control" name="city" id="city" disabled>
+                                                                    <option value="" disabled selected>City/Municipality:</option>
                                                                 </select>
                                                               </div>
                                                           </div>
                                                           <div class="col-md-4">
                                                               <div class="form-group">
-                                                                <select class="form-control">
-                                                                  <option value="" disabled selected>Barangay:</option>
-                                                                  <option value="1">Option 1</option>
-                                                                  <option value="2">Option 2</option>
-                                                                  <option value="3">Option 3</option>
+                                                                <select class="form-control" name="barangay" id="barangay" disabled>
+                                                                    <option value="" disabled selected>Barangay:</option>
                                                                 </select>
                                                               </div>
                                                           </div>
@@ -310,18 +294,18 @@
                                                           <div class="col-md-3">
                                                               <div class="form-group">
                                                                   <label class="bmd-label-floating">Trans-IN:</label>
-                                                                  <input type="text" class="form-control">
+                                                                  <input type="text" class="form-control" name="transin">
                                                               </div>
                                                           </div>
                                                           <div class="col-md-3">
                                                               <div class="form-group">
                                                                   <label class="bmd-label-floating">Trans-OUT:</label>
-                                                                  <input type="text" class="form-control">
+                                                                  <input type="text" class="form-control" name="transout">
                                                               </div>
                                                           </div>
                                                         </div>
                                                         <div class="clearfix"></div>
-                                                    </form>
+                                                    <!-- </form> -->
                                                   </div>
                                               </div>
                                       </div>
@@ -341,40 +325,65 @@
                                                       <h4 class="card-title">Operation Staffs</h4>
                                                     </div>
                                                     <div class="card-body">
-                                                    <form>
+                                                    <!-- <form> -->
                                                       <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                              <label class="bmd-label-floating">Surgeon:</label>
-                                                              <input type="text" class="form-control">
+                                                            <label>Surgeon:</label>
+                                                            <select class="form-control" name="surgeon">
+                                                                <option value="" disabled selected>-- Select Surgeon --</option>
+                                                                <?php foreach($surgeon as $row): ?>
+                                                                    <option value="<?php echo $row->id; ?>"><?php echo $row->surgeon_fname. " " .$row->surgeon_mname. " " .$row->surgeon_lname; ?></option>
+                                                                <?php endforeach; ?>
+                                                            </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                              <label class="bmd-label-floating">Scrub Staff:</label>
-                                                              <input type="text" class="form-control">
+                                                              <label>Scrub Staff:</label>
+                                                              <select class="form-control" name="scrubstaff">
+                                                                  <option value=""disabled selected>-- Select Scrub Staff --</option>
+                                                                  <?php foreach($scrubstaff as $row): ?>
+                                                                      <option value="<?php echo $row->id; ?>"><?php echo $row->scrubstaff_fname. " " .$row->scrubstaff_mname. " " .$row->scrubstaff_lname; ?></option>
+                                                                  <?php endforeach; ?>
+                                                              </select>
                                                             </div>
                                                         </div>
                                                       </div>
                                                       <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                              <label class="bmd-label-floating">Assistant Surgeon:</label>
-                                                              <input type="text" class="form-control">
+                                                              <label>Assistant Surgeon:</label>
+                                                              <select class="form-control" name="asst_surgeon">
+                                                                  <option value=""disabled selected>-- Select Assistant Surgeon --</option>
+                                                                  <?php foreach($surgeon as $row): ?>
+                                                                    <option value="<?php echo $row->id; ?>"><?php echo $row->surgeon_fname. " " .$row->surgeon_mname. " " .$row->surgeon_lname; ?></option>
+                                                                  <?php endforeach; ?>
+                                                              </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                              <label class="bmd-label-floating">Circulating Staff:</label>
-                                                              <input type="text" class="form-control">
+                                                              <label>Circulating Staff:</label>
+                                                              <select class="form-control" name="cstaff">
+                                                                  <option disabled selected>-- Select Circulating Staff --</option>
+                                                                  <?php foreach($circulating_staff as $row): ?>
+                                                                      <option value="<?php echo $row->id; ?>"><?php echo $row->circulatingstaff_fname. " " .$row->circulatingstaff_mname. " " .$row->circulatingstaff_lname; ?></option>
+                                                                  <?php endforeach; ?>
+                                                              </select>
                                                             </div>
                                                         </div>
                                                       </div>
                                                       <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                              <label class="bmd-label-floating">Anesthesiologist:</label>
-                                                              <input type="text" class="form-control">
+                                                              <label>Anesthesiologist:</label>
+                                                              <select class="form-control" name="anest">
+                                                                  <option value="" disabled selected>-- Select Anesthesiologist --</option>
+                                                                  <?php foreach($anesthesiologist as $row): ?>
+                                                                      <option value="<?php echo $row->id; ?>"><?php echo $row->anes_fname. " " .$row->anes_mname. " " .$row->anes_lname; ?></option>
+                                                                  <?php endforeach; ?>
+                                                              </select>
                                                             </div>
                                                         </div>
                                                       </div>
@@ -382,12 +391,12 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                               <label class="bmd-label-floating">Other Personnel:</label>
-                                                              <input type="text" class="form-control">
+                                                              <input type="text" class="form-control" name="otherpersonnel">
                                                             </div>
                                                         </div>
                                                       </div>
-                                                      <div class="clearfix"></div>
-                                                    </form>
+                                                      <!-- <div class="clearfix"></div> -->
+                                                    <!-- </form> -->
                                                     </div>
                                                 </div>
                                         </div>
@@ -407,24 +416,24 @@
                                                       <h4 class="card-title">Operation</h4>
                                                     </div>
                                                     <div class="card-body">
-                                                    <form>
+                                                    <!-- <form> -->
                                                       <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                            <label class="bmd-label-floating">Date of Operation:</label>
-                                                            <input type="text" class="form-control">
+                                                              <label class="bmd-label-floating">Date of Operation:</label>
+                                                              <input type="text" class="form-control" id="datepicker1" name="dateoperation">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                            <label class="bmd-label-floating">Started:</label>
-                                                            <input type="text" class="form-control">
+                                                              <label class="bmd-label-floating">Started:</label>
+                                                              <input type="text" class="form-control" id="timepicker" name="op_started">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                            <label class="bmd-label-floating">Ended:</label>
-                                                            <input type="email" class="form-control">
+                                                              <label class="bmd-label-floating">Ended:</label>
+                                                              <input type="email" class="form-control" id="timepicker1" name="op_ended">
                                                             </div>
                                                         </div>
                                                       </div>
@@ -432,7 +441,7 @@
                                                         <div class="col-md-12">
                                                           <div class="form-group">
                                                             <label class="bmd-label-floating">Operative Performed:</label>
-                                                            <textarea class="form-control" rows="3"></textarea>
+                                                            <textarea class="form-control" rows="3" name="operative_performed"></textarea>
                                                           </div>
                                                         </div>
                                                       </div>
@@ -444,20 +453,53 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                           <div class="form-group">
-                                                            <label class="bmd-label-floating">Sponges:</label>
-                                                            <input type="text" class="form-control">
+                                                            <select class="form-control" name="sponges_preop">
+                                                                  <option value="" disabled selected>Sponges:</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                                  <option value="6">6</option>
+                                                                  <option value="7">7</option>
+                                                                  <option value="8">8</option>
+                                                                  <option value="9">9</option>
+                                                                  <option value="10">10</option>
+                                                            </select>
                                                           </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                           <div class="form-group">
-                                                            <label class="bmd-label-floating">Kellys:</label>
-                                                            <input type="text" class="form-control">
+                                                            <select class="form-control" name="kellys_preop">
+                                                                  <option value="" disabled selected>Kellys:</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                                  <option value="6">6</option>
+                                                                  <option value="7">7</option>
+                                                                  <option value="8">8</option>
+                                                                  <option value="9">9</option>
+                                                                  <option value="10">10</option>
+                                                            </select>
                                                           </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                           <div class="form-group">
-                                                            <label class="bmd-label-floating">Needles:</label>
-                                                            <input type="text" class="form-control">
+                                                            <select class="form-control" name="needles_preop">
+                                                                  <option value="" disabled selected>Needles:</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                                  <option value="6">6</option>
+                                                                  <option value="7">7</option>
+                                                                  <option value="8">8</option>
+                                                                  <option value="9">9</option>
+                                                                  <option value="10">10</option>
+                                                            </select>
                                                           </div>
                                                         </div>
                                                       </div>
@@ -469,20 +511,53 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                           <div class="form-group">
-                                                            <label class="bmd-label-floating">Sponges:</label>
-                                                            <input type="text" class="form-control">
+                                                            <select class="form-control" name="sponges_postop">
+                                                                  <option value="" disabled selected>Sponges:</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                                  <option value="6">6</option>
+                                                                  <option value="7">7</option>
+                                                                  <option value="8">8</option>
+                                                                  <option value="9">9</option>
+                                                                  <option value="10">10</option>
+                                                            </select>
                                                           </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                           <div class="form-group">
-                                                            <label class="bmd-label-floating">Kellys:</label>
-                                                            <input type="text" class="form-control">
+                                                            <select class="form-control" name="kellys_postop">
+                                                                  <option value="" disabled selected>Kellys:</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                                  <option value="6">6</option>
+                                                                  <option value="7">7</option>
+                                                                  <option value="8">8</option>
+                                                                  <option value="9">9</option>
+                                                                  <option value="10">10</option>
+                                                            </select>
                                                           </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                           <div class="form-group">
-                                                            <label class="bmd-label-floating">Needles:</label>
-                                                            <input type="text" class="form-control">
+                                                            <select class="form-control" name="needles_postop">
+                                                                  <option value="" disabled selected>Needles:</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                                  <option value="6">6</option>
+                                                                  <option value="7">7</option>
+                                                                  <option value="8">8</option>
+                                                                  <option value="9">9</option>
+                                                                  <option value="10">10</option>
+                                                            </select>
                                                           </div>
                                                         </div>
                                                       </div>
@@ -490,24 +565,27 @@
                                                         <div class="col-md-4">
                                                           <div class="form-group">
                                                             <label class="bmd-label-floating">Baby Out:</label>
-                                                            <input type="text" class="form-control">
+                                                            <input type="text" class="form-control" id="timepicker2" name="baby_out">
                                                           </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                           <div class="form-group">
                                                             <label class="bmd-label-floating">APGAR:</label>
-                                                            <input type="text" class="form-control">
+                                                            <input type="text" class="form-control" name="apgar">
                                                           </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                           <div class="form-group">
-                                                            <label class="bmd-label-floating">Sex:</label>
-                                                            <input type="text" class="form-control">
+                                                            <select class="form-control" name="baby_sex">
+                                                                  <option value="" disabled selected>Sex:</option>
+                                                                  <option value="Male">Male</option>
+                                                                  <option value="Female">Female</option>
+                                                            </select>
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div class="clearfix"></div>
-                                                    </form>
+                                                      <!-- <div class="clearfix"></div> -->
+                                                    <!-- </form> -->
                                                     </div>
                                                 </div>
                                         </div>
@@ -527,24 +605,24 @@
                                                       <h4 class="card-title">Anesthesia</h4>
                                                     </div>
                                                     <div class="card-body">
-                                                    <form>
+                                                    <!-- <form> -->
                                                       <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                            <label class="bmd-label-floating">Type of Anesthesia used:</label>
-                                                            <input type="text" class="form-control">
+                                                            <label class="bmd-label-floating">Type of Anesthesia:</label>
+                                                            <input type="text" class="form-control" name="typeofanes">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                             <label class="bmd-label-floating">Began:</label>
-                                                            <input type="text" class="form-control">
+                                                            <input type="text" class="form-control" id="timepicker3" name="anes_began">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                             <label class="bmd-label-floating">Ended:</label>
-                                                            <input type="email" class="form-control">
+                                                            <input type="email" class="form-control" id="timepicker4" name="anes_ended">
                                                             </div>
                                                         </div>
                                                       </div>
@@ -559,7 +637,7 @@
                                                         <div class="col-md-12">
                                                           <div class="form-group">
                                                             <label class="bmd-label-floating">Before OR:</label>
-                                                            <textarea class="form-control" rows="2"></textarea>
+                                                            <textarea class="form-control" rows="2" name="treatbefore_or"></textarea>
                                                           </div>
                                                         </div>
                                                       </div>
@@ -567,7 +645,7 @@
                                                         <div class="col-md-12">
                                                           <div class="form-group">
                                                             <label class="bmd-label-floating">During OR:</label>
-                                                            <textarea class="form-control" rows="2"></textarea>
+                                                            <textarea class="form-control" rows="2" name="treatduring_or"></textarea>
                                                           </div>
                                                         </div>
                                                       </div>
@@ -575,12 +653,12 @@
                                                         <div class="col-md-12">
                                                           <div class="form-group">
                                                             <label class="bmd-label-floating">Immediately OR:</label>
-                                                            <textarea class="form-control" rows="2"></textarea>
+                                                            <textarea class="form-control" rows="2" name="treatimmediately_or"></textarea>
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div class="clearfix"></div>
-                                                    </form>
+                                                      <!-- <div class="clearfix"></div> -->
+                                                    <!-- </form> -->
                                                     </div>
                                                 </div>
                                         </div>
@@ -600,12 +678,12 @@
                                                       <h4 class="card-title">Diagnosis</h4>
                                                     </div>
                                                     <div class="card-body">
-                                                    <form>
+                                                    <!-- <form> -->
                                                       <div class="row">
                                                         <div class="col-md-12">
                                                           <div class="form-group">
                                                             <label class="bmd-label-floating">Pre-Operative Diagnosis:</label>
-                                                            <textarea class="form-control" rows="3"></textarea>
+                                                            <textarea class="form-control" rows="3" name="preop_diag"></textarea>
                                                           </div>
                                                         </div>
                                                       </div>
@@ -613,12 +691,12 @@
                                                         <div class="col-md-12">
                                                           <div class="form-group">
                                                             <label class="bmd-label-floating">Post-Operative Diagnosis:</label>
-                                                            <textarea class="form-control" rows="3"></textarea>
+                                                            <textarea class="form-control" rows="3" name="postop_diag"></textarea>
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div class="clearfix"></div>
-                                                    </form>
+                                                      <!-- <div class="clearfix"></div> -->
+                                                    <!-- </form> -->
                                                     </div>
                                                 </div>
                                         </div>
@@ -638,10 +716,10 @@
                                                       <h4 class="card-title">Specimen/s forwarded to Laboratory for Examination:</h4>
                                                     </div>
                                                     <div class="card-body">
-                                                    <form>
+                                                    <!-- <form> -->
                                                       <div class="form-check">
                                                         <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
+                                                            <input class="form-check-input" type="checkbox" value="Urine" name="specimens[]">
                                                             Urine
                                                             <span class="form-check-sign">
                                                                 <span class="check"></span>
@@ -650,52 +728,15 @@
                                                       </div>
                                                       <div class="form-check">
                                                         <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
+                                                            <input class="form-check-input" type="checkbox" value="Blood" name="specimens[]">
                                                             Blood
                                                             <span class="form-check-sign">
                                                                 <span class="check"></span>
                                                             </span>
                                                         </label>
                                                       </div>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            Blood
-                                                            <span class="form-check-sign">
-                                                                <span class="check"></span>
-                                                            </span>
-                                                        </label>
-                                                      </div>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            Blood
-                                                            <span class="form-check-sign">
-                                                                <span class="check"></span>
-                                                            </span>
-                                                        </label>
-                                                      </div>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            Blood
-                                                            <span class="form-check-sign">
-                                                                <span class="check"></span>
-                                                            </span>
-                                                        </label>
-                                                      </div>
-                                                      <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            Blood
-                                                            <span class="form-check-sign">
-                                                                <span class="check"></span>
-                                                            </span>
-                                                        </label>
-                                                      </div>
-                                                      <button type="submit" class="btn btn-danger pull-right">Save Record</button>
+                                                      <button type="submit" class="btn btn-danger pull-right" name="save">Save Record</button>
                                                       <div class="clearfix"></div>
-                                                    </form>
                                                     </div>
                                                 </div>
                                         </div>
@@ -706,6 +747,7 @@
                           </div>
                         </div>
                       </div>
+                  </form>
                   </div>
               </div>
           </div>
@@ -751,11 +793,6 @@
       </footer>
     </div>
   </div>
-  <script src="<?php echo base_url() ?>assets/js/materialize.min.js"></script>
-  <script>
-        const Calendar = document.querySelector('#datepicker');
-        M.Datepicker.init(Calendar,{});
-  </script>
   <!--   Core JS Files   -->
   <script src="<?php echo base_url() ?>assets/js/core/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/core/popper.min.js"></script>
@@ -793,18 +830,190 @@
   <script src="<?php echo base_url() ?>assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="<?php echo base_url() ?>assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-  <!-- <script src="<?php echo base_url() ?>assets/demo/demo.js"></script> -->
+
+  <!-- selecting province, city and barangay -->
+  <!-- <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.1.js"></script> -->
+  <script>
+        $(document).ready(function(){
+            $('#province').on('change', function(){
+                var provCode = $(this).val();
+                if(provCode == ''){
+                    $('#city').prop('disabled', true);
+                }
+                else{
+                    $('#city').prop('disabled', false);
+                    $.ajax({
+                        url:"<?php echo base_url() ?>nurse/getcity",
+                        type: "POST",
+                        data: {'provCode' : provCode},
+                        dataType: 'json',
+                        success: function(data){
+                            $('#city').html(data);
+                        },
+                        error: function(){
+                            alert('Error occur ... !!!');
+                        }
+                    });
+                }
+            });
+
+            $('#city').on('change', function(){
+                var citymunCode = $(this).val();
+                if(citymunCode == ''){
+                    $('#barangay').prop('disabled', true);
+                }
+                else{
+                    $('#barangay').prop('disabled', false);
+                    $.ajax({
+                        url:"<?php echo base_url() ?>nurse/getbarangay",
+                        type: "POST",
+                        data: {'citymunCode' : citymunCode},
+                        dataType: 'json',
+                        success: function(data){
+                            $('#barangay').html(data);
+                        },
+                        error: function(){
+                            alert('Error occur ... !!!');
+                        }
+                    });
+                }
+            });
+        });
+  </script>
+
+  <!-- time picker -->
+  <script src="<?php echo base_url() ?>assets/js/mdtimepicker.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/mdtimepicker.min"></script>
+  <script>
+        $(document).ready(function(){
+            $('#timepicker').mdtimepicker();
+        });
+
+        $(document).ready(function(){
+            $('#timepicker1').mdtimepicker();
+        });
+
+        $(document).ready(function(){
+            $('#timepicker2').mdtimepicker();
+        });
+
+        $(document).ready(function(){
+            $('#timepicker3').mdtimepicker();
+        });
+
+        $(document).ready(function(){
+            $('#timepicker4').mdtimepicker();
+        });
+  </script>
+
   <!-- date picker -->
-  <!-- <script>
-    $(document).ready(function(){
-      $('#datepicker').datepicker();
+  <script src="<?php echo base_url() ?>assets/js/materialize.min.js"></script>
+  <script>
+    const Calendar = document.querySelector('#datepicker');
+    M.Datepicker.init(Calendar,{});
+
+    const Calendar1 = document.querySelector('#datepicker1');
+    M.Datepicker.init(Calendar1,{});
+
+    const Calendar2 = document.querySelector('#datepicker2');
+    M.Datepicker.init(Calendar2,{
+      onSelect: function (value, Calendar2){
+        var today = new Date();
+        age = today.getFullYear() - ui.selectedYear;
+        $('#txtage').val(age);
+      },
+      changeMonth: true,
+      changeYear: true
     });
-  </script> -->
-  <!-- <script type="text/javascript">
-         $(function () {
-             $('#date').datetimepicker();
-         });
-  </script> -->
+  </script>
+
+<!-- auto compute age -->
+  <script>
+        function formatDate(date){
+            var d= new Date(date),
+                day = '' + d.getDate(),
+                month = '' + (d.getMonth() + 1),
+                year = d.getFullYear();
+
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+
+            return [year, month, day].join('-');
+        }
+
+        function getAge(dateString){
+            var birthdate = new Date().getTime();
+            if (typeof dateString === 'undefined' || dateString === null || (String(dateString) === 'NaN')){ //variable is undefined or null value
+                birthdate = new Date().getTime();
+            }
+            birthdate = new Date(dateString).getTime();
+            var now = new Date().getTime();
+
+            var n = (now - birthdate)/1000;
+            if (n < 604800){ //less than a week
+                var day_n = Math.floor(n/86400);
+                if ( typeof day_n === 'undefined' || day_n === null || (String(day_n) === 'Nan')){
+                    //variable is undefined or null
+                    return '';
+                }
+                else{
+                    return day_n + ' day' + (day_n > 1 ? 's' : '') + ' old';
+                }
+            }
+            else if (n < 2629743){ //less than a month
+                var week_n = Math.floor(n/604800);
+                if (typeof week_n === 'undefined' || week_n === null || (String(week_n) === 'NaN')){
+                    return '';
+                }
+                else{
+                    return week_n + ' week' + (week_n > 1 ? 's' : '') + ' old';
+                }
+            }
+            else if (n < 31562417){ //less than 24 months
+                var month_n = Math.floor(n/2629743);
+                if (typeof month_n === 'undefined' || month_n === null || (String(month_n) === 'NaN')){
+                    return '';
+                }
+                else{
+                    return month_n + ' month' + (week_n > 1 ? 's' : '') + ' old';
+                }
+            }
+            else{
+                var year_n = Math.floor(n/31556926);
+                if (typeof year_n === 'undefined' || year_n === null || (String(year_n) === 'NaN')){
+                    return year_n  = '';
+                }
+                else{
+                    return year_n + ' year' + (year_n > 1 ? 's' : '') + ' old';
+                }
+            }
+        }
+
+        function getAgeVal(pid){
+            var birthdate = formatDate(document.getElementById("txtbirthdate").value);
+            var count = document.getElementById("txtbirthdate").value.length;
+
+            if (count == '10'){
+                var age = getAge(birthdate);
+                var str = age;
+                var res = str.substring(0, 1);
+                if (res =='-' || res =='0'){
+                    document.getElementById("txtbirthdate").value = "";
+                    document.getElementById("txtage").value = "";
+                    $('#txtbirthdate').focus();
+                    return false;
+                }
+                else{
+                    document.getElementById("txtage").value = age;
+                }
+            }
+            else{
+                document.getElementById("txtage").value = "";
+                return false;
+            }
+        }
+  </script>
+
   <script>
     $(document).ready(function() {
       $().ready(function() {

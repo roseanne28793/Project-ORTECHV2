@@ -8731,7 +8731,8 @@ $jscomp.polyfill = function (e, r, p, m) {
     autoClose: false,
 
     // the default output format for the input field value
-    format: 'mmm dd, yyyy',
+    // format: 'mmm dd, yyyy',
+    format: 'dd/mm/yyyy',
 
     // Used to create date object from current input string
     parse: null,
@@ -8751,7 +8752,7 @@ $jscomp.polyfill = function (e, r, p, m) {
 
     // The earliest date that can be selected
     minDate: null,
-    // Thelatest date that can be selected
+    // The latest date that can be selected
     maxDate: null,
 
     // Number of years either side, or array of upper/lower range
